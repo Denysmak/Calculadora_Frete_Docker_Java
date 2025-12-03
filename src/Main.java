@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         double distancia;
-
+        double peso;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Qual será a distância percorrida pelo entregador?(em Kilometros)");
@@ -12,6 +12,10 @@ public class Main {
 
         System.out.print("Escolha o tipo de frete: (1)Economico  (2)Expresso");
         int tipo = scanner.nextInt();
+
+        System.out.print("Qual o peso do produto?");
+        peso = scanner.nextDouble();
+
         FormaFrete resultado = null;
 
         if (tipo == 1){
@@ -26,7 +30,7 @@ public class Main {
             return;
         }
 
-        double valorFinal = resultado.calculaPreco(distancia);
+        double valorFinal = resultado.calculaPreco(distancia, peso);
         System.out.println(valorFinal);
 
     }
